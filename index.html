@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="it">
 <head>
     <meta charset="UTF-8">
@@ -10,468 +11,473 @@
             padding: 0;
             box-sizing: border-box;
         }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #F5E6D3 0%, #E8D5B7 50%, #D4C5A9 100%);
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        /* Header */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero::before {
-            content: '☕';
-            position: absolute;
-            top: 10%;
-            right: 10%;
-            font-size: 150px;
-            opacity: 0.1;
-            animation: float 6s ease-in-out infinite;
-        }
-        
-        .hero::after {
-            content: '🥐';
-            position: absolute;
-            bottom: 10%;
-            left: 10%;
-            font-size: 120px;
-            opacity: 0.1;
-            animation: float 4s ease-in-out infinite reverse;
-        }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
-        
+
+```
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background: linear-gradient(135deg, #F5E6D3 0%, #E8D5B7 50%, #D4C5A9 100%);
+    }
+    
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    
+    /* Header */
+    .hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .hero::before {
+        content: '☕';
+        position: absolute;
+        top: 10%;
+        right: 10%;
+        font-size: 150px;
+        opacity: 0.1;
+        animation: float 6s ease-in-out infinite;
+    }
+    
+    .hero::after {
+        content: '🥐';
+        position: absolute;
+        bottom: 10%;
+        left: 10%;
+        font-size: 120px;
+        opacity: 0.1;
+        animation: float 4s ease-in-out infinite reverse;
+    }
+    
+    @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-20px); }
+    }
+    
+    .hero-content h1 {
+        font-size: 4rem;
+        margin-bottom: 1rem;
+        color: #8B4513;
+        text-shadow: 2px 2px 4px rgba(255,255,255,0.5);
+        animation: slideInDown 1s ease-out;
+    }
+    
+    .hero-content .subtitle {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+        color: #A0522D;
+        animation: slideInUp 1s ease-out;
+    }
+    
+    .hero-content .tagline {
+        font-size: 1.2rem;
+        margin-bottom: 3rem;
+        color: #654321;
+        animation: fadeIn 1.5s ease-out;
+    }
+    
+    @keyframes slideInDown {
+        from { opacity: 0; transform: translateY(-50px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    
+    @keyframes slideInUp {
+        from { opacity: 0; transform: translateY(50px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+    
+    .cta-button {
+        display: inline-block;
+        background: linear-gradient(45deg, #32CD32, #228B22);
+        color: white;
+        padding: 18px 40px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 1.2rem;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        transition: all 0.3s ease;
+        animation: pulse 2s infinite;
+    }
+    
+    .cta-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+        animation: none;
+    }
+    
+    @keyframes pulse {
+        0% { box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+        50% { box-shadow: 0 10px 30px rgba(50,205,50,0.4); }
+        100% { box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+    }
+    
+    /* Pricing Section */
+    .pricing {
+        padding: 100px 0;
+        background: #FFFEF9;
+        position: relative;
+    }
+    
+    .pricing::before {
+        content: '';
+        position: absolute;
+        top: -50px;
+        left: 0;
+        right: 0;
+        height: 100px;
+        background: #FFFEF9;
+        clip-path: polygon(0 50px, 100% 0, 100% 100%, 0 100%);
+    }
+    
+    .section-title {
+        text-align: center;
+        font-size: 3rem;
+        margin-bottom: 3rem;
+        color: #333;
+        position: relative;
+    }
+    
+    .section-title::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100px;
+        height: 4px;
+        background: linear-gradient(45deg, #32CD32, #228B22);
+        border-radius: 2px;
+    }
+    
+    .pricing-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 40px;
+        margin-top: 60px;
+    }
+    
+    .pricing-card {
+        background: #FFFEF9;
+        border-radius: 20px;
+        padding: 40px 30px;
+        text-align: center;
+        box-shadow: 0 20px 40px rgba(139,69,19,0.1);
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        border: 2px solid #F5E6D3;
+    }
+    
+    .pricing-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 5px;
+        background: linear-gradient(45deg, #8B4513, #A0522D);
+    }
+    
+    .pricing-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 30px 50px rgba(0,0,0,0.15);
+    }
+    
+    .pricing-card.featured {
+        transform: scale(1.05);
+        border: 3px solid #FF6347;
+        background: #FFF9F5;
+    }
+    
+    .pricing-card.featured::before {
+        background: linear-gradient(45deg, #FF6347, #FF4500);
+    }
+    
+    .pricing-card.featured .badge {
+        position: absolute;
+        top: 20px;
+        right: -30px;
+        background: #FF6347;
+        color: white;
+        padding: 5px 40px;
+        transform: rotate(45deg);
+        font-size: 0.9rem;
+        font-weight: bold;
+    }
+    
+    .card-title {
+        font-size: 1.8rem;
+        color: #8B4513;
+        margin-bottom: 20px;
+        font-weight: bold;
+    }
+    
+    .price-display {
+        margin: 30px 0;
+    }
+    
+    .price-pay {
+        font-size: 2.5rem;
+        color: #A0522D;
+        font-weight: bold;
+    }
+    
+    .price-arrow {
+        font-size: 2rem;
+        color: #333;
+        margin: 10px 0;
+    }
+    
+    .price-get {
+        font-size: 2.5rem;
+        color: #228B22;
+        font-weight: bold;
+    }
+    
+    .savings {
+        background: linear-gradient(45deg, #32CD32, #28a745);
+        color: white;
+        padding: 10px 20px;
+        border-radius: 25px;
+        margin: 20px 0;
+        font-weight: bold;
+    }
+    
+    .card-features {
+        list-style: none;
+        margin: 30px 0;
+    }
+    
+    .card-features li {
+        margin: 10px 0;
+        padding: 10px 0;
+        border-bottom: 1px solid #f0f0f0;
+    }
+    
+    .card-features li:last-child {
+        border-bottom: none;
+    }
+    
+    /* How it Works */
+    .how-it-works {
+        padding: 100px 0;
+        background: linear-gradient(135deg, #F5E6D3 0%, #E8D5B7 100%);
+    }
+    
+    .steps {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 40px;
+        margin-top: 60px;
+    }
+    
+    .step {
+        text-align: center;
+        background: #FFFEF9;
+        padding: 40px 30px;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(139,69,19,0.1);
+        position: relative;
+        transition: transform 0.3s ease;
+        border: 2px solid #F5E6D3;
+    }
+    
+    .step:hover {
+        transform: translateY(-5px);
+    }
+    
+    .step-number {
+        position: absolute;
+        top: -25px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 50px;
+        height: 50px;
+        background: linear-gradient(45deg, #32CD32, #228B22);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+    
+    .step-icon {
+        font-size: 4rem;
+        margin: 20px 0;
+    }
+    
+    .step h3 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+        color: #333;
+    }
+    
+    /* Examples */
+    .examples {
+        padding: 100px 0;
+        background: #FFFEF9;
+    }
+    
+    .example-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+        margin-top: 60px;
+    }
+    
+    .example-card {
+        background: linear-gradient(135deg, #FF6347 0%, #FF7F50 100%);
+        color: white;
+        padding: 30px;
+        border-radius: 15px;
+        text-align: center;
+        transform: rotate(-1deg);
+        transition: all 0.3s ease;
+        box-shadow: 0 10px 25px rgba(255,99,71,0.3);
+    }
+    
+    .example-card:nth-child(even) {
+        transform: rotate(1deg);
+    }
+    
+    .example-card:hover {
+        transform: rotate(0deg) scale(1.05);
+    }
+    
+    .example-card h4 {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+    }
+    
+    .example-card .combo {
+        font-size: 1.1rem;
+        opacity: 0.9;
+    }
+    
+    /* FAQ */
+    .faq {
+        padding: 100px 0;
+        background: #f8f9fa;
+    }
+    
+    .faq-container {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    
+    .faq-item {
+        background: #FFFEF9;
+        margin: 20px 0;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(139,69,19,0.1);
+        border: 1px solid #F5E6D3;
+    }
+    
+    .faq-question {
+        padding: 25px 30px;
+        background: linear-gradient(45deg, #8B4513, #A0522D);
+        color: #F5DEB3;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 1.1rem;
+        position: relative;
+    }
+    
+    .faq-question::after {
+        content: '+';
+        position: absolute;
+        right: 30px;
+        font-size: 1.5rem;
+        transition: transform 0.3s ease;
+        color: #F5DEB3;
+    }
+    
+    .faq-question.active::after {
+        transform: rotate(45deg);
+    }
+    
+    .faq-answer {
+        padding: 0 30px;
+        max-height: 0;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        background: #FFFEF9;
+    }
+    
+    .faq-answer.active {
+        padding: 25px 30px;
+        max-height: 200px;
+    }
+    
+    /* CTA Final */
+    .final-cta {
+        padding: 100px 0;
+        background: linear-gradient(135deg, #8B4513 0%, #A0522D 100%);
+        text-align: center;
+        color: #F5DEB3;
+    }
+    
+    .final-cta h2 {
+        font-size: 3rem;
+        margin-bottom: 2rem;
+    }
+    
+    .final-cta p {
+        font-size: 1.3rem;
+        margin-bottom: 3rem;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
         .hero-content h1 {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            animation: slideInDown 1s ease-out;
+            font-size: 2.5rem;
         }
         
         .hero-content .subtitle {
-            font-size: 1.8rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-            animation: slideInUp 1s ease-out;
-        }
-        
-        .hero-content .tagline {
-            font-size: 1.2rem;
-            margin-bottom: 3rem;
-            animation: fadeIn 1.5s ease-out;
-        }
-        
-        @keyframes slideInDown {
-            from { opacity: 0; transform: translateY(-50px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        @keyframes slideInUp {
-            from { opacity: 0; transform: translateY(50px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        
-        .cta-button {
-            display: inline-block;
-            background: linear-gradient(45deg, #32CD32, #228B22);
-            color: white;
-            padding: 18px 40px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.2rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            transition: all 0.3s ease;
-            animation: pulse 2s infinite;
-        }
-        
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
-            animation: none;
-        }
-        
-        @keyframes pulse {
-            0% { box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
-            50% { box-shadow: 0 10px 30px rgba(50,205,50,0.4); }
-            100% { box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
-        }
-        
-        /* Pricing Section */
-        .pricing {
-            padding: 100px 0;
-            background: #FFFEF9;
-            position: relative;
-        }
-        
-        .pricing::before {
-            content: '';
-            position: absolute;
-            top: -50px;
-            left: 0;
-            right: 0;
-            height: 100px;
-            background: #FFFEF9;
-            clip-path: polygon(0 50px, 100% 0, 100% 100%, 0 100%);
+            font-size: 1.3rem;
         }
         
         .section-title {
-            text-align: center;
-            font-size: 3rem;
-            margin-bottom: 3rem;
-            color: #333;
-            position: relative;
-        }
-        
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 4px;
-            background: linear-gradient(45deg, #32CD32, #228B22);
-            border-radius: 2px;
+            font-size: 2rem;
         }
         
         .pricing-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            margin-top: 60px;
-        }
-        
-        .pricing-card {
-            background: #FFFEF9;
-            border-radius: 20px;
-            padding: 40px 30px;
-            text-align: center;
-            box-shadow: 0 20px 40px rgba(139,69,19,0.1);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            border: 2px solid #F5E6D3;
-        }
-        
-        .pricing-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 5px;
-            background: linear-gradient(45deg, #8B4513, #A0522D);
-        }
-        
-        .pricing-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 30px 50px rgba(0,0,0,0.15);
+            grid-template-columns: 1fr;
+            gap: 20px;
         }
         
         .pricing-card.featured {
-            transform: scale(1.05);
-            border: 3px solid #FF6347;
-            background: #FFF9F5;
-        }
-        
-        .pricing-card.featured::before {
-            background: linear-gradient(45deg, #FF6347, #FF4500);
-        }
-        
-        .pricing-card.featured .badge {
-            position: absolute;
-            top: 20px;
-            right: -30px;
-            background: #FF6347;
-            color: white;
-            padding: 5px 40px;
-            transform: rotate(45deg);
-            font-size: 0.9rem;
-            font-weight: bold;
-        }
-        
-        .card-title {
-            font-size: 1.8rem;
-            color: #8B4513;
-            margin-bottom: 20px;
-            font-weight: bold;
-        }
-        
-        .price-display {
-            margin: 30px 0;
-        }
-        
-        .price-pay {
-            font-size: 2.5rem;
-            color: #A0522D;
-            font-weight: bold;
-        }
-        
-        .price-arrow {
-            font-size: 2rem;
-            color: #333;
-            margin: 10px 0;
-        }
-        
-        .price-get {
-            font-size: 2.5rem;
-            color: #228B22;
-            font-weight: bold;
-        }
-        
-        .savings {
-            background: linear-gradient(45deg, #32CD32, #28a745);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 25px;
-            margin: 20px 0;
-            font-weight: bold;
-        }
-        
-        .card-features {
-            list-style: none;
-            margin: 30px 0;
-        }
-        
-        .card-features li {
-            margin: 10px 0;
-            padding: 10px 0;
-            border-bottom: 1px solid #f0f0f0;
-        }
-        
-        .card-features li:last-child {
-            border-bottom: none;
-        }
-        
-        /* How it Works */
-        .how-it-works {
-            padding: 100px 0;
-            background: linear-gradient(135deg, #F5E6D3 0%, #E8D5B7 100%);
-        }
-        
-        .steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-top: 60px;
-        }
-        
-        .step {
-            text-align: center;
-            background: #FFFEF9;
-            padding: 40px 30px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(139,69,19,0.1);
-            position: relative;
-            transition: transform 0.3s ease;
-            border: 2px solid #F5E6D3;
-        }
-        
-        .step:hover {
-            transform: translateY(-5px);
-        }
-        
-        .step-number {
-            position: absolute;
-            top: -25px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(45deg, #32CD32, #228B22);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-        
-        .step-icon {
-            font-size: 4rem;
-            margin: 20px 0;
-        }
-        
-        .step h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: #333;
-        }
-        
-        /* Examples */
-        .examples {
-            padding: 100px 0;
-            background: #FFFEF9;
-        }
-        
-        .example-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 60px;
-        }
-        
-        .example-card {
-            background: linear-gradient(135deg, #FF6347 0%, #FF7F50 100%);
-            color: white;
-            padding: 30px;
-            border-radius: 15px;
-            text-align: center;
-            transform: rotate(-1deg);
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 25px rgba(255,99,71,0.3);
-        }
-        
-        .example-card:nth-child(even) {
-            transform: rotate(1deg);
-        }
-        
-        .example-card:hover {
-            transform: rotate(0deg) scale(1.05);
-        }
-        
-        .example-card h4 {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-        }
-        
-        .example-card .combo {
-            font-size: 1.1rem;
-            opacity: 0.9;
-        }
-        
-        /* FAQ */
-        .faq {
-            padding: 100px 0;
-            background: #f8f9fa;
-        }
-        
-        .faq-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .faq-item {
-            background: #FFFEF9;
-            margin: 20px 0;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(139,69,19,0.1);
-            border: 1px solid #F5E6D3;
-        }
-        
-        .faq-question {
-            padding: 25px 30px;
-            background: linear-gradient(45deg, #8B4513, #A0522D);
-            color: #F5DEB3;
-            cursor: pointer;
-            font-weight: bold;
-            font-size: 1.1rem;
-            position: relative;
-        }
-        
-        .faq-question::after {
-            content: '+';
-            position: absolute;
-            right: 30px;
-            font-size: 1.5rem;
-            transition: transform 0.3s ease;
-            color: #F5DEB3;
-        }
-        
-        .faq-question.active::after {
-            transform: rotate(45deg);
-        }
-        
-        .faq-answer {
-            padding: 0 30px;
-            max-height: 0;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            background: #FFFEF9;
-        }
-        
-        .faq-answer.active {
-            padding: 25px 30px;
-            max-height: 200px;
-        }
-        
-        /* CTA Final */
-        .final-cta {
-            padding: 100px 0;
-            background: linear-gradient(135deg, #8B4513 0%, #A0522D 100%);
-            text-align: center;
-            color: #F5DEB3;
+            transform: none;
         }
         
         .final-cta h2 {
-            font-size: 3rem;
-            margin-bottom: 2rem;
+            font-size: 2rem;
         }
-        
-        .final-cta p {
-            font-size: 1.3rem;
-            margin-bottom: 3rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero-content h1 {
-                font-size: 2.5rem;
-            }
-            
-            .hero-content .subtitle {
-                font-size: 1.3rem;
-            }
-            
-            .section-title {
-                font-size: 2rem;
-            }
-            
-            .pricing-cards {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-            
-            .pricing-card.featured {
-                transform: none;
-            }
-            
-            .final-cta h2 {
-                font-size: 2rem;
-            }
-        }
-    </style>
+    }
+</style>
+```
+
 </head>
 <body>
     <!-- Hero Section -->
@@ -486,210 +492,213 @@
         </div>
     </section>
 
-    <!-- Pricing Section -->
-    <section class="pricing" id="pricing">
-        <div class="container">
-            <h2 class="section-title">Scegli la Tua Card</h2>
-            <div class="pricing-cards">
-                <div class="pricing-card">
-                    <h3 class="card-title">Card Base</h3>
-                    <div class="price-display">
-                        <div class="price-pay">PAGA 9</div>
-                        <div class="price-arrow">↓</div>
-                        <div class="price-get">CONSUMI 10</div>
-                    </div>
-                    <div class="savings">1 Colazione GRATIS!</div>
-                    <ul class="card-features">
-                        <li>✅ Perfetta per iniziare</li>
-                        <li>✅ Mix personalizzabile</li>
-                        <li>✅ Validità 3 mesi</li>
-                        <li>✅ Risparmio garantito</li>
-                    </ul>
+```
+<!-- Pricing Section -->
+<section class="pricing" id="pricing">
+    <div class="container">
+        <h2 class="section-title">Scegli la Tua Card</h2>
+        <div class="pricing-cards">
+            <div class="pricing-card">
+                <h3 class="card-title">Card Base</h3>
+                <div class="price-display">
+                    <div class="price-pay">PAGA 9</div>
+                    <div class="price-arrow">↓</div>
+                    <div class="price-get">CONSUMI 10</div>
                 </div>
+                <div class="savings">1 Colazione GRATIS!</div>
+                <ul class="card-features">
+                    <li>✅ Perfetta per iniziare</li>
+                    <li>✅ Mix personalizzabile</li>
+                    <li>✅ Validità 3 mesi</li>
+                    <li>✅ Risparmio garantito</li>
+                </ul>
+            </div>
 
-                <div class="pricing-card featured">
-                    <div class="badge">POPOLARE</div>
-                    <h3 class="card-title">Card Plus</h3>
-                    <div class="price-display">
-                        <div class="price-pay">PAGA 17</div>
-                        <div class="price-arrow">↓</div>
-                        <div class="price-get">CONSUMI 20</div>
-                    </div>
-                    <div class="savings">3 Colazioni GRATIS!</div>
-                    <ul class="card-features">
-                        <li>✅ Ideale per uso regolare</li>
-                        <li>✅ Risparmio maggiore</li>
-                        <li>✅ Mix personalizzabile</li>
-                        <li>✅ Perfetta per uffici</li>
-                    </ul>
+            <div class="pricing-card featured">
+                <div class="badge">POPOLARE</div>
+                <h3 class="card-title">Card Plus</h3>
+                <div class="price-display">
+                    <div class="price-pay">PAGA 17</div>
+                    <div class="price-arrow">↓</div>
+                    <div class="price-get">CONSUMI 20</div>
                 </div>
+                <div class="savings">3 Colazioni GRATIS!</div>
+                <ul class="card-features">
+                    <li>✅ Ideale per uso regolare</li>
+                    <li>✅ Risparmio maggiore</li>
+                    <li>✅ Mix personalizzabile</li>
+                    <li>✅ Perfetta per uffici</li>
+                </ul>
+            </div>
 
-                <div class="pricing-card">
-                    <h3 class="card-title">Card Premium</h3>
-                    <div class="price-display">
-                        <div class="price-pay">PAGA 26</div>
-                        <div class="price-arrow">↓</div>
-                        <div class="price-get">CONSUMI 30</div>
-                    </div>
-                    <div class="savings">4 Colazioni GRATIS!</div>
-                    <ul class="card-features">
-                        <li>✅ Massimo risparmio</li>
-                        <li>✅ Per grandi consumatori</li>
-                        <li>✅ Mix personalizzabile</li>
-                        <li>✅ Ideale per gruppi</li>
-                    </ul>
+            <div class="pricing-card">
+                <h3 class="card-title">Card Premium</h3>
+                <div class="price-display">
+                    <div class="price-pay">PAGA 26</div>
+                    <div class="price-arrow">↓</div>
+                    <div class="price-get">CONSUMI 30</div>
                 </div>
+                <div class="savings">4 Colazioni GRATIS!</div>
+                <ul class="card-features">
+                    <li>✅ Massimo risparmio</li>
+                    <li>✅ Per grandi consumatori</li>
+                    <li>✅ Mix personalizzabile</li>
+                    <li>✅ Ideale per gruppi</li>
+                </ul>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- How it Works -->
-    <section class="how-it-works">
-        <div class="container">
-            <h2 class="section-title" style="color: white;">Come Funziona</h2>
-            <div class="steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <div class="step-icon">🎯</div>
-                    <h3>Scegli il Mix</h3>
-                    <p>Crea la tua colazione ideale:<br>cappuccino + brioche, caffè + toast, o quello che preferisci!</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <div class="step-icon">✖️</div>
-                    <h3>Moltiplicalo</h3>
-                    <p>Decidi quante volte ripetere il tuo mix: 10, 20 o 30 volte in base alle tue esigenze.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <div class="step-icon">🎁</div>
-                    <h3>Ottieni Gratis</h3>
-                    <p>Ricevi le tue colazioni bonus: 1, 3 o 4 completamente gratuite!</p>
-                </div>
+<!-- How it Works -->
+<section class="how-it-works">
+    <div class="container">
+        <h2 class="section-title" style="color: white;">Come Funziona</h2>
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-icon">🎯</div>
+                <h3>Scegli il Mix</h3>
+                <p>Crea la tua colazione ideale:<br>cappuccino + brioche, caffè + toast, o quello che preferisci!</p>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-icon">✖️</div>
+                <h3>Moltiplicalo</h3>
+                <p>Decidi quante volte ripetere il tuo mix: 10, 20 o 30 volte in base alle tue esigenze.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-icon">🎁</div>
+                <h3>Ottieni Gratis</h3>
+                <p>Ricevi le tue colazioni bonus: 1, 3 o 4 completamente gratuite!</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Examples -->
-    <section class="examples">
-        <div class="container">
-            <h2 class="section-title">Mix Più Popolari</h2>
-            <div class="example-grid">
-                <div class="example-card">
-                    <h4>Il Classico</h4>
-                    <p class="combo">Cappuccino + Brioche × 10</p>
-                </div>
-                <div class="example-card">
-                    <h4>L'Energetico</h4>
-                    <p class="combo">Caffè + Toast × 20</p>
-                </div>
-                <div class="example-card">
-                    <h4>Il Fruttato</h4>
-                    <p class="combo">Cappuccino + Spremuta × 10</p>
-                </div>
-                <div class="example-card">
-                    <h4>Solo Caffè</h4>
-                    <p class="combo">Espresso × 30</p>
-                </div>
-                <div class="example-card">
-                    <h4>Dolce Risveglio</h4>
-                    <p class="combo">Cappuccino + Cornetto × 20</p>
-                </div>
-                <div class="example-card">
-                    <h4>Salato & Veloce</h4>
-                    <p class="combo">Caffè + Brioche × 10</p>
-                </div>
+<!-- Examples -->
+<section class="examples">
+    <div class="container">
+        <h2 class="section-title">Mix Più Popolari</h2>
+        <div class="example-grid">
+            <div class="example-card">
+                <h4>Il Classico</h4>
+                <p class="combo">Cappuccino + Brioche × 10</p>
+            </div>
+            <div class="example-card">
+                <h4>L'Energetico</h4>
+                <p class="combo">Caffè + Toast × 20</p>
+            </div>
+            <div class="example-card">
+                <h4>Il Fruttato</h4>
+                <p class="combo">Cappuccino + Spremuta × 10</p>
+            </div>
+            <div class="example-card">
+                <h4>Solo Caffè</h4>
+                <p class="combo">Espresso × 30</p>
+            </div>
+            <div class="example-card">
+                <h4>Dolce Risveglio</h4>
+                <p class="combo">Cappuccino + Cornetto × 20</p>
+            </div>
+            <div class="example-card">
+                <h4>Salato & Veloce</h4>
+                <p class="combo">Caffè + Brioche × 10</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- FAQ -->
-    <section class="faq">
-        <div class="container">
-            <h2 class="section-title">Domande Frequenti</h2>
-            <div class="faq-container">
-                <div class="faq-item">
-                    <div class="faq-question">Posso cambiare il mio mix dopo aver acquistato la card?</div>
-                    <div class="faq-answer">No, il mix viene scelto al momento dell'acquisto e rimane fisso per tutta la durata della card. Questo ci permette di offrirti il miglior prezzo possibile!</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">Quanto tempo ho per utilizzare la mia card?</div>
-                    <div class="faq-answer">Ogni card ha una validità di 3 mesi dalla data di acquisto. Avrai tutto il tempo necessario per goderti le tue colazioni!</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">Posso regalare la mia card a qualcun altro?</div>
-                    <div class="faq-answer">Assolutamente sì! Le nostre card sono trasferibili e rappresentano un regalo perfetto per amici, colleghi o familiari.</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">Cosa succede se non riesco a consumare tutta la card?</div>
-                    <div class="faq-answer">Le card non sono rimborsabili, ma hanno una validità di 3 mesi. Considera che puoi anche condividerla con colleghi o amici!</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">Posso comprare più card insieme?</div>
-                    <div class="faq-answer">Certo! Puoi acquistare più card con mix diversi o uguali. È perfetto per uffici o gruppi di amici.</div>
-                </div>
+<!-- FAQ -->
+<section class="faq">
+    <div class="container">
+        <h2 class="section-title">Domande Frequenti</h2>
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">Posso cambiare il mio mix dopo aver acquistato la card?</div>
+                <div class="faq-answer">No, il mix viene scelto al momento dell'acquisto e rimane fisso per tutta la durata della card. Questo ci permette di offrirti il miglior prezzo possibile!</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Quanto tempo ho per utilizzare la mia card?</div>
+                <div class="faq-answer">Ogni card ha una validità di 3 mesi dalla data di acquisto. Avrai tutto il tempo necessario per goderti le tue colazioni!</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Posso regalare la mia card a qualcun altro?</div>
+                <div class="faq-answer">Assolutamente sì! Le nostre card sono trasferibili e rappresentano un regalo perfetto per amici, colleghi o familiari.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Cosa succede se non riesco a consumare tutta la card?</div>
+                <div class="faq-answer">Le card non sono rimborsabili, ma hanno una validità di 3 mesi. Considera che puoi anche condividerla con colleghi o amici!</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Posso comprare più card insieme?</div>
+                <div class="faq-answer">Certo! Puoi acquistare più card con mix diversi o uguali. È perfetto per uffici o gruppi di amici.</div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Final CTA -->
-    <section class="final-cta">
-        <div class="container">
-            <h2>Pronto a Iniziare?</h2>
-            <p>Vieni in cassa e crea la tua card personalizzata.<br>La colazione perfetta ti aspetta!</p>
-            <a href="#" class="cta-button">Crea la Tua Card Ora! ☕</a>
-        </div>
-    </section>
+<!-- Final CTA -->
+<section class="final-cta">
+    <div class="container">
+        <h2>Pronto a Iniziare?</h2>
+        <p>Vieni in cassa e crea la tua card personalizzata.<br>La colazione perfetta ti aspetta!</p>
+        <a href="#" class="cta-button">Crea la Tua Card Ora! ☕</a>
+    </div>
+</section>
 
-    <script>
-        // Smooth scrolling for CTA button
-        document.querySelector('a[href="#pricing"]').addEventListener('click', function(e) {
-            e.preventDefault();
-            document.querySelector('#pricing').scrollIntoView({
-                behavior: 'smooth'
-            });
+<script>
+    // Smooth scrolling for CTA button
+    document.querySelector('a[href="#pricing"]').addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector('#pricing').scrollIntoView({
+            behavior: 'smooth'
         });
+    });
 
-        // FAQ Accordion
-        document.querySelectorAll('.faq-question').forEach(question => {
-            question.addEventListener('click', () => {
-                const answer = question.nextElementSibling;
-                const isActive = question.classList.contains('active');
-                
-                // Close all FAQ items
-                document.querySelectorAll('.faq-question').forEach(q => q.classList.remove('active'));
-                document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('active'));
-                
-                // Open clicked item if it wasn't active
-                if (!isActive) {
-                    question.classList.add('active');
-                    answer.classList.add('active');
-                }
-            });
+    // FAQ Accordion
+    document.querySelectorAll('.faq-question').forEach(question => {
+        question.addEventListener('click', () => {
+            const answer = question.nextElementSibling;
+            const isActive = question.classList.contains('active');
+            
+            // Close all FAQ items
+            document.querySelectorAll('.faq-question').forEach(q => q.classList.remove('active'));
+            document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('active'));
+            
+            // Open clicked item if it wasn't active
+            if (!isActive) {
+                question.classList.add('active');
+                answer.classList.add('active');
+            }
         });
+    });
 
-        // Add scroll animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
+    // Add scroll animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
 
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Observe pricing cards and steps
-        document.querySelectorAll('.pricing-card, .step, .example-card').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = 'all 0.6s ease';
-            observer.observe(el);
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
         });
-    </script>
+    }, observerOptions);
+
+    // Observe pricing cards and steps
+    document.querySelectorAll('.pricing-card, .step, .example-card').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'all 0.6s ease';
+        observer.observe(el);
+    });
+</script>
+```
+
 </body>
 </html>
